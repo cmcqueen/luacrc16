@@ -92,7 +92,7 @@ __declspec(dllexport) int luaopen_crc16(lua_State* L)
 int luaopen_crc16(lua_State* L)
 #endif
 {
-    /* this function and luaL_register are removed on Lua 5.2 */
-    luaL_openlib(L, "crc16", crc16_methods, 0);
+    lua_newtable(L);
+    luaL_setfuncs(L, crc16_methods, 0);
     return 1;
 }
